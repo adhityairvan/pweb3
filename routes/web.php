@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function (){
+    Route::resource('game','GameController');
+    Route::get('penjualan','PenjualanController@adminPenjualan');
+});
+
+Route::prefix('user')->group(function(){
+    Route::resource('penjualan','PenjualanController')->except([
+        'show',
+    ]);
+    Route::resource('pembelian','PembelianController')->except([
+        'show','delete','edit','update',
+    ]);
+});

@@ -8,10 +8,10 @@ class Cart extends Model
 {
     //
     protected $table = 'carts';
-    protected $fillable = ['id_user','id_game','id_jumlah','total_harga'];
+    protected $fillable = ['id_user','id_penjualan','id_jumlah','total_harga'];
 
-    public function game(){
-        return $this->belongsTo('App\Game','id_game');
+    public function penjualan(){
+        return $this->belongsTo('App\Penjualan','id_penjualan');
     }
     public function user(){
         return $this->belongsTo('App\User','id_user');
