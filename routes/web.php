@@ -37,5 +37,5 @@ Route::prefix('user')->group(function(){
 });
 
 Route::get('test', function(){
-    return view('user-page.admin.game');
+    return view('user-page.admin.game-create');
 });
