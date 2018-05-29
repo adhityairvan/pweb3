@@ -21,33 +21,37 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" method="post" action="{{route('game.store')}}" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="judul">Judul game</label>
-                            <input type="text" class="form-control" id="" name="judul">
+                            <input type="text" class="form-control" id="judul" name="judul">
                         </div>
                         <div class="form-group">
                             <label for="system">System</label>
-                            <input type="text" class="form-control" id="" name="system">
+                            <select class="form-control" id="system" name="system">
+                                <option value="PS4">PS4</option>
+                                <option value="XBOX">XBOX</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="" name="deskripsi">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi">
                         </div>
                         <div class="form-group">
                             <label for="stock">Stock</label>
-                            <input type="text" class="form-control" id="" name="stok">
+                            <input type="number" class="form-control" id="stock" name="stok" disabled>
                         </div>
                         <div class="form-group">
                             <label for="img">Main Image</label>
-                            <input type="file" class="form-control" id="" name="img">
+                            <input type="file" class="form-control" id="img" name="img">
                         </div>
                         <div class="form-group">
                             <label for="multi">Alt Image</label>
                             <input type="file" class="form-control" id="" name="multi[]" multiple>
                         </div>
                     </div>
+                    {{csrf_field()}}
                     <!-- /.card-body -->
 
                     <div class="card-footer">

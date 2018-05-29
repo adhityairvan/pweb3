@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Image_Extra;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -29,7 +30,7 @@ class GameController extends Controller
     public function create()
     {
         //
-        return view('admin.game.create');
+        return view('user-page.admin.game-create');
     }
 
     /**
@@ -42,13 +43,16 @@ class GameController extends Controller
     {
         //
         $game = New Game;
-        $game->game_name = $request->input('game_name');
+        $game->game_name = $request->input('judul');
         $game->system = $request->input('system');
-        $game->description = $request->input('description');
+        $game->description = $request->input('deskripsi');
         $game->stock = 0;
         $game->game_cover = $this->upload($request,$game);
         $game->sold = 0;
         $game->save();
+        if($request->hasAny('multi')){
+            $this->multi($request,$game);
+        }
         return redirect()->route('game.index');
     }
 
@@ -90,6 +94,9 @@ class GameController extends Controller
         $game->description = $request->input('description');
         Storage::disk('public')->delete($game->game_cover);
         $game->game_cover = $this->upload($request,$game);
+        if($request->hasAny('multi')){
+            $this->multi($request,$game);
+        }
         $game->save();
         return redirect()->route('game.index');
     }
@@ -109,12 +116,22 @@ class GameController extends Controller
     }
 
     private function upload(Request $request,$game){
-        if($request->has('game_cover')){
-            $file = $request->file('game_cover');
-            $filename = Carbon::now()->toDateString().$game->game_name.'.'.$file->getExtension();
+        if($request->has('img')){
+            $file = $request->file('img');
+            $filename = Carbon::now()->toDateString().$game->game_name.'.'.$file->extension();
             $path = $file->storeAs('game',$filename,'public');
             return $path;
         }
         return null;
+    }
+    private function multi(Request $request,Game $game){
+        foreach ($request->file('multi') as $file){
+            $filename =  $filename = Carbon::now()->toDateString().$file->getClientOriginalName();
+            $model = New Image_Extra;
+            $model->id_game = $game->id;
+            $model->image_link = $file->storeAs('game',$filename,'public');
+            $model->image_alt = $file->getClientOriginalName();
+            $model->save();
+        }
     }
 }
