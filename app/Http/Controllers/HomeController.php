@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Game;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ps4 = Game::where('system', 'ps4')->get();
+        $xbox = Game::where('system', 'xbox')->get();
+        $data = [
+            'ps4' => $ps4,
+            'xbox' => $xbox
+        ];
+        return view('home')->with('data', $data);
     }
 }

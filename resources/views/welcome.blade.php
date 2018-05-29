@@ -46,11 +46,13 @@
             <ul>
                 <li>
                 <div class="ps4-item">
+                @foreach($data['ps4'] as $ps4)
                     <img src="">
-                    <h4>Judul</h4>
+                    <h4>{{ps4->game->game_name}}</h4>
                     <p>Mulai dari 50Credit</p>
                     <p>50 Penjual</p>
                     <a href="#" class="btn">Judul</a>
+                    @endforeach
                 </div>
                 </li>
             </ul>
