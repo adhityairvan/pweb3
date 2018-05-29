@@ -34,6 +34,7 @@
                             <th style="width: 400px">Judul Game</th>
                             <th style="width: 200px">System</th>
                             <th style="width: 200px">Harga</th>
+                            <th style="width: 200px">Tanggal Masuk</th>
                             <th colspan="2" class="text-center">Manage</th>
                         </tr>
                         <tr>
@@ -42,6 +43,7 @@
                             <td>PS4</td>
                             <td>Rp 15.000,-</td>
                             <td>Belum Terjual</td>
+                            <td>tes</td>
                             <td class="text-center">
                                 <a href="strivia/edit">
                                     <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
@@ -59,6 +61,7 @@
                             <td>PS4</td>
                             <td>Rp 15.000,-</td>
                             <td>Belum Terjual</td>
+                            <td>tes</td>
                             <td class="text-center">
                                 <a href="strivia/edit">
                                     <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
@@ -74,21 +77,9 @@
                             <td>3.</td>
                             <td>Cron job running</td>
                             <td>
-                                <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                </div>
+                                tes
                             </td>
-                            <td><span class="badge bg-primary">30%</span></td>
-                        </tr>
-                        <tr>
-                            <td>4.</td>
-                            <td>Fix and squish bugs</td>
-                            <td>
-                                <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar bg-success" style="width: 90%"></div>
-                                </div>
-                            </td>
-                            <td><span class="badge bg-success">90%</span></td>
+                            <td>adsads</td>
                         </tr>
                     </table>
                 </div>
