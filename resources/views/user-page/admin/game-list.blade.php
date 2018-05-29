@@ -30,11 +30,10 @@
                     <table class="table">
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th style="width: 80px">User</th>
                             <th style="width: 400px">Judul Game</th>
                             <th style="width: 200px">System</th>
                             <th style="width: 200px">Harga</th>
-                            <th style="width: 200px">Tanggal Masuk</th>
+                            <th style="width: 80px">Stock</th>
                             <th colspan="2" class="text-center">Manage</th>
                         </tr>
                         <tr>
@@ -42,8 +41,7 @@
                             <td>God of War</td>
                             <td>PS4</td>
                             <td>Rp 15.000,-</td>
-                            <td>Belum Terjual</td>
-                            <td>tes</td>
+                            <td>56</td>
                             <td class="text-center">
                                 <a href="strivia/edit">
                                     <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
@@ -60,8 +58,7 @@
                             <td>God of War</td>
                             <td>PS4</td>
                             <td>Rp 15.000,-</td>
-                            <td>Belum Terjual</td>
-                            <td>tes</td>
+                            <td>890</td>
                             <td class="text-center">
                                 <a href="strivia/edit">
                                     <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
@@ -72,14 +69,6 @@
                                     <button type="button" class="btn btn-block btn-outline-danger"><span class="fa fa-trash"></span></button>
                                 </a>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>Cron job running</td>
-                            <td>
-                                tes
-                            </td>
-                            <td>adsads</td>
                         </tr>
                     </table>
                 </div>
