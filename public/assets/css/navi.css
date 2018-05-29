@@ -23,11 +23,6 @@
     color: #000;
 }
 
-.logo {
-    grid-column-start: 2;
-
-}
-
 .side-menu{
     display: grid;
     padding:0px;

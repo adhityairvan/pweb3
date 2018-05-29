@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('nav.css');
 
 * {
   box-sizing: border-box;
@@ -9,18 +8,16 @@
 html, body {
   width: 100%;
   height: 100%;
-}
-
-body{
-  background-color: #ccc;
+  background-color: #ccc; 
+  margin: 10px 25px;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
 
-.wrapper {
+.wrapper2 {
   display: grid;
   width: 1300px;
   height: 100vh;
@@ -28,10 +25,9 @@ a {
   grid-template-columns: 200px 1fr;
   grid-template-rows: min-content;
   grid-template-areas:
-    "nav nav"
-    "filter filter"
-    "content content"
-    "footer footer";
+    "nav nav nav nav"
+    "filter filter filter filter"
+    "content content content content";
 }
 
 .side_bar {
@@ -124,12 +120,4 @@ a {
 
 .xbox {
   background-color: #5dc21e;
-}
-
-.footer {
-  grid-area: footer;
-  height: 100px;
-  color: lightgrey;
-  background-color: black;
-  padding: 10px;
 }

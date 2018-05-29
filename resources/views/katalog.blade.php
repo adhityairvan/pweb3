@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.master-layout')
 
+@section('assets')
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/reset_.css">
-  <link rel="stylesheet" href="css/style_katalog.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style_katalog.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/navi.css">
+    @endsection
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <title>Katalog</title>
-</head>
-<body>
-  <div class="wrapper">
-    <?php include('nav_guest.php') ?>
-    <div class="side_bar">
+@section('title')
+    Katalog
+    @endsection
+
+@section('content')
+  <div class="wrapper2">
+    <!-- <div class="content"> -->
+      <div class="side_bar">
       <a href="">PS4</a>
       <a href="">XBOX</a>
     </div>
@@ -46,11 +45,11 @@
 
         <!-- ____ -->
       </div>
-    </div>
-    
+    <!-- </div> -->
   </div>
-
-  <script>
+@endsection
+@section('script')
+<script>
     $(function() {
       var redirectTo = function(address) {
         document.location.href = address;
@@ -73,5 +72,4 @@
     })
 
   </script>
-</body>
-</html>
+  @endsection

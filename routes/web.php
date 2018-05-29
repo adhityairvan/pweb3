@@ -36,5 +36,5 @@ Route::prefix('user')->group(function(){
 });
 
 Route::get('test', function(){
-    return view('cart-chekout');
+    return view('katalog');
 });
