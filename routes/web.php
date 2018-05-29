@@ -23,7 +23,9 @@ Route::prefix('admin')->group(function (){
     Route::resource('game','GameController');
     Route::get('penjualan','PenjualanController@adminPenjualan');
 });
-
+Route::get('user',function (){
+    return view('user-page.user');
+});
 Route::prefix('user')->group(function(){
     Route::resource('penjualan','PenjualanController')->except([
         'show',
