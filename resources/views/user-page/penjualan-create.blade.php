@@ -27,10 +27,18 @@
                             <label for="id_game">Game</label>
                             <select id="id_game" class="form-control select2" name="id_game" style="width: 100%;">
                                 <optgroup label="PS4">
-                                    <option value="0">test</option>
+                                    @foreach($games as $game)
+                                        @if($game->system == 'PS4')
+                                        <option value="{{$game->id}}">{{$game->game_name}}</option>
+                                        @endif
+                                        @endforeach
                                 </optgroup>
                                 <optgroup label="XBOX">
-                                    <option value="1">test2</option>
+                                    @foreach($games as $game)
+                                        @if($game->system == 'XBOX')
+                                            <option value="{{$game->id}}">{{$game->game_name}}</option>
+                                        @endif
+                                    @endforeach
                                 </optgroup>
                             </select>
                         </div>

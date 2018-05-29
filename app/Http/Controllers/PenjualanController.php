@@ -29,7 +29,8 @@ class PenjualanController extends Controller
     public function create()
     {
         //
-        return view('user-page.penjualan-create');
+        $games = Game::all();
+        return view('user-page.penjualan-create')->with('games',$games);
     }
 
     /**
@@ -106,7 +107,7 @@ class PenjualanController extends Controller
     }
 
     public function adminPenjualan(){
-        $games = Game::all();
-        return view('user-page.admin.penjualan')->with('games',$games);
+        $penjualan = Penjualan::all();
+        return view('user-page.admin.penjualan')->with('penjualan',$penjualan);
     }
 }

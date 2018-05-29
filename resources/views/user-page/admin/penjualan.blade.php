@@ -36,25 +36,21 @@
                             <th style="width: 200px">Harga</th>
                             <th style="width: 200px">Tanggal Masuk</th>
                             <th colspan="2" class="text-center">Manage</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>God of War</td>
-                            <td>PS4</td>
-                            <td>Rp 15.000,-</td>
-                            <td>Belum Terjual</td>
-                            <td>tes</td>
-                            <td class="text-center">
-                                <a href="strivia/edit">
-                                    <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
-                                </a>
-                            </td>
-                            <td class="text-center">
-                                <a href="#">
-                                    <button type="button" class="btn btn-block btn-outline-danger"><span class="fa fa-trash"></span></button>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach($penjualan as $jual)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$jual->penjual->username}}</td>
+                                <td>{{$jual->game->game_name}}</td>
+                                <td>{{$jual->game->system}}</td>
+                                <td>Rp {{$jual->harga}},-</td>
+                                <td>{{$jual->created_at->format('d M Y')}}</td>
+                                <td class="text-center">
+                                    <a href="#">
+                                        <button type="button" class="btn btn-block btn-outline-danger"><span class="fa fa-trash"></span></button>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                         <tr>
                             <td>2</td>
                             <td>God of War</td>

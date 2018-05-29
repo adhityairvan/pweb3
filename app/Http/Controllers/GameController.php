@@ -15,11 +15,17 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         //
         $games = Game::all();
-        return view('admin.game')->with('games',$games);
+        return view('user-page.admin.game-list')->with('games',$games);
     }
 
     /**
@@ -76,7 +82,7 @@ class GameController extends Controller
     public function edit(Game $game)
     {
         //
-        return view('admin.game.edit')->with('game',$game);
+        return view('user-page.admin.game-edit')->with('game',$game);
     }
 
     /**
@@ -91,7 +97,7 @@ class GameController extends Controller
         //
         $game->game_name = $request->input('game_name');
         $game->system = $request->input('system');
-        $game->description = $request->input('description');
+        $game->description = $request->input('deskripsi');
         Storage::disk('public')->delete($game->game_cover);
         $game->game_cover = $this->upload($request,$game);
         if($request->hasAny('multi')){
