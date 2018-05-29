@@ -70,26 +70,25 @@
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>Cron job running</td>
-                            <td>
-                                <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                </div>
-                            </td>
-                            <td><span class="badge bg-primary">30%</span></td>
-                        </tr>
-                        <tr>
-                            <td>4.</td>
-                            <td>Fix and squish bugs</td>
-                            <td>
-                                <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar bg-success" style="width: 90%"></div>
-                                </div>
-                            </td>
-                            <td><span class="badge bg-success">90%</span></td>
-                        </tr>
+                        @foreach($games as $game)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>Kosong</td>
+                                <td>PS4</td>
+                                <td>{{$game->harga}}</td>
+                                <td>Status</td>
+                                <td class="text-center">
+                                    <a href="penjualan/{{$game->id}}/edit">
+                                        <button type="button" class="btn btn-block btn-outline-warning"><span class="fa fa-edit"></span></button>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#">
+                                        <button type="button" class="btn btn-block btn-outline-danger"><span class="fa fa-trash"></span></button>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
                     </table>
                 </div>
                 <!-- /.card-body -->

@@ -38,7 +38,7 @@
     <!-- Game list -->
     <section class="game-list ps4-color" id="ps4">
         <div class="ps4">
-            <img src="src/PlayStation_4_-_Logo.svg.png">
+            <img src="assets/src/PlayStation_4_-_Logo.svg.png">
             <H3>Playstation 4</H3>
             <a href="#" class="btn">More Games</a>
         </div>
@@ -58,7 +58,7 @@
     </section>
     <section class="game-list xbox-color" id="xbox">
         <div class="xbox">
-            <img src="src/Xbox-One-X_2017_Horizontal.png">
+            <img src="assets/src/Xbox-One-X_2017_Horizontal.png">
             <h3>XBOX One</h3>
             <a href="#" class="btn">More Games</a>
         </div>

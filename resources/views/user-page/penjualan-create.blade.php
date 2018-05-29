@@ -21,7 +21,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" method="post" action="{{route('penjualan.store')}}">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="id_game">Game</label>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <!-- /.card-body -->
-
+                    {{csrf_field()}}
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

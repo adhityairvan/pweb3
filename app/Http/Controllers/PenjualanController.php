@@ -17,8 +17,8 @@ class PenjualanController extends Controller
     public function index()
     {
         //
-        //$games = Auth::user()->jual();
-        return view('user-page.penjualan')/*->with('games',$games)*/;
+        $games = Auth::user()->jual;
+        return view('user-page.penjualan')->with('games',$games);
     }
 
     /**
@@ -71,7 +71,7 @@ class PenjualanController extends Controller
     public function edit(Penjualan $penjualan)
     {
         //
-        return view('user.penjualan.edit')->with('penjualan',$penjualan);
+        return view('user-page.penjualan-edit')->with('penjualan',$penjualan);
     }
 
     /**
