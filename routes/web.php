@@ -34,3 +34,7 @@ Route::prefix('user')->group(function(){
         'show','delete','edit','update',
     ]);
 });
+
+Route::get('test', function(){
+    return view('user-page.admin.game');
+});
