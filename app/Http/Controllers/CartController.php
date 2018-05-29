@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Penjualan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -17,7 +18,7 @@ class CartController extends Controller
     {
         //
         $cart = Cart::where('id_user',Auth::user()->id)->get();
-        return view('user.cart.index')->with('cart',$cart);
+        return view('cart')->with('cart',$cart);
     }
 
     /**

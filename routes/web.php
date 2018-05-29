@@ -33,6 +33,7 @@ Route::prefix('user')->group(function(){
     Route::resource('pembelian','PembelianController')->except([
         'show','delete','edit','update',
     ]);
+    Route::get('cart','CartController@index');
 });
 
 Route::get('test', function(){

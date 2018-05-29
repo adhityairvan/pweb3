@@ -40,7 +40,7 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         //
-        $items = Cart::where('id_user',Auth::user()->id)->get();
+        $items = Auth::user()->cart;
         $pembelian = New Pembelian;
         $pembelian->id_user = Auth::user()->id;
         $pembelian->alamat = $request->input('alamat');
